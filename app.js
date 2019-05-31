@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
   const createTable =
     "CREATE TABLE users (data VARCHAR(255) PRIMARY KEY,created_at TIMESTAMP DEFAULT NOW())";
   const q = "SELECT COUNT(*) AS count FROM users";
-  connection.query(createTable, q, (err, results) => {
+  connection.query(q, (err, results) => {
     if (err) throw err;
     const count = results[0].count;
     res.render("home", { count: count });
