@@ -27,10 +27,10 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/register", (req, res) => {
+app.post("/register", (req, res) => {
   const data = { data: req.body.data };
-  const insert = `INSERT INTO users(data) SET ${data}`;
-  connection.query(insert, (err, results) => {
+  const insert = 'INSERT INTO users SET ?';
+  connection.query(insert, data, (err, results) => {
     if (err) throw err;
     res.redirect("/");
   });
