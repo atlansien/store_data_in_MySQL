@@ -1,0 +1,17 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+    <link rel="stylesheet" href="/app.css">
+</head>
+
+<body>
+    <div class="flex-container">
+    <div class="container">
+        <h1>JOIN US</h1>
+        <p class="lead">格納されているデータ数は<strong><%= count %></strong>です。悪用することはないですが、危ないので重要なデータなどは入れないでください </p>
+        <form method="POST" action='/register'>
+            <input type="text" class="form" name="data" placeholder="Enter Your data">
+            <button>Post Now</button>
+        </form>
+    </div>
+</div>
+</body>
