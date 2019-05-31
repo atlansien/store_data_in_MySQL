@@ -5,7 +5,7 @@ const mysql = require("mysql");
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-app.set("view enjine", "ejs");
+app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 
