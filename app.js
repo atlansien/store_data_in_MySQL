@@ -11,14 +11,12 @@ app.use(express.static(__dirname + "/public"));
 
 const connection = mysql.createConnection({
   host: "us-cdbr-iron-east-02.cleardb.net",
-  user: "b69e15cdb05a1e",
-  password: "1fe6eae5",
-  database: "heroku_43c9e0299d8e801"
+  user: "b0726f03963300",
+  password: "93222f79",
+  database: "heroku_08b6de1878e7653"
 });
 
 app.get("/", (req, res) => {
-  const createTable =
-    "CREATE TABLE users (data VARCHAR(255) PRIMARY KEY,created_at TIMESTAMP DEFAULT NOW())";
   const q = "SELECT COUNT(*) AS count FROM users";
   connection.query(q, (err, results) => {
     if (err) throw err;
@@ -36,4 +34,4 @@ app.post("/register", (req, res) => {
   });
 });
 
-app.listen(PORT, () => console.log("Example app listening on port 3000!"));
+app.listen(PORT);
